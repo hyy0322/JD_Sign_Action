@@ -7,8 +7,10 @@ const fs = require('fs')
 const rp = require('request-promise')
 const download = require('download')
 
-// 京东cookie
+// 京东Cookie
 const cookie = process.env.JD_COOKIE
+// 京东Cookie
+const dual_cookie = process.env.JD_DUAL_COOKIE
 // Server酱SCKEY
 const push_key = process.env.PUSH_KEY
 
@@ -53,6 +55,9 @@ function dateFormat() {
 function setupCookie() {
   var js_content = fs.readFileSync(js_path, 'utf8')
   js_content = js_content.replace(/var Key = ''/, `var Key = '${cookie}'`)
+  if (dual_cookie) {
+    js_content = js_content.replace(/var DualKey = ''/, `var DualKey = '${cookie}'`)
+  }
   fs.writeFileSync(js_path, js_content, 'utf8')
 }
 
