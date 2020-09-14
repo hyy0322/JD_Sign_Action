@@ -10,6 +10,15 @@
 * 凌晨4点定时执行
 *  自定义：.github/workflows/work.yaml 编辑
 
+### 注意问题
+
+> 问题：[Fork 项目 cron 不执行](https://github.com/ZHDeveloper/JD_Sign_Action/issues/3)
+> 
+> 1、建议修改README.md提交，以触发定时任务。
+>
+> 2、定时任务的时间是UTC时间，跟中国时间有8小时的时差。
+
+
 ## 使用用法
 * 点击右上角 `Fork` 项目；
 * `Settings` -> `Secrets` 中添加京东Cookie、Server酱SCKEY；
